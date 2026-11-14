@@ -1,147 +1,208 @@
 
-<main class="container projects-page">
+<!DOCTYPE html>
+<html lang="en">
 
-    <h1>My Projects</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="projects-grid">
+    <title>Projects | Wanda's Personal Website</title>
 
-        <!-- PROJECT 1: NUMERICAL METHODS -->
-        <a href="#" class="project-card">
-            <div class="project-image numerical-preview">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-                <div class="gui-window">
-                    <div class="gui-header">
-                        Numerical Methods Workbench
-                    </div>
+<body>
 
-                    <div class="gui-body">
-                        <div class="gui-sidebar">
-                            <span>Root Finding</span>
-                            <span>Optimization</span>
-                            <span>Interpolation</span>
-                            <span>Integration</span>
+<div class="container">
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="site-name">
+            Wanda's Personal Website
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- PROJECTS CONTENT -->
+
+    <main class="projects-page">
+
+        <h1>My Projects</h1>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1: NUMERICAL METHODS -->
+
+            <a href="#" class="project-card">
+
+                <div class="project-image numerical-preview">
+
+                    <div class="gui-window">
+
+                        <div class="gui-header">
+                            Numerical Methods Workbench
                         </div>
 
-                        <div class="gui-main">
-                            <div class="gui-label">Function Input</div>
-                            <div class="gui-input">f(x) = x² - 4</div>
+                        <div class="gui-body">
 
-                            <div class="gui-label">Initial Guess</div>
-                            <div class="gui-input">x₀ = 3.0</div>
+                            <div class="gui-sidebar">
+                                <span>Root Finding</span>
+                                <span>Optimization</span>
+                                <span>Interpolation</span>
+                                <span>Integration</span>
+                            </div>
 
-                            <div class="gui-button">Calculate</div>
+                            <div class="gui-main">
 
-                            <div class="gui-result">
-                                Result: x = 2.000
+                                <div class="gui-label">Function Input</div>
+                                <div class="gui-input">f(x) = x² - 4</div>
+
+                                <div class="gui-label">Initial Guess</div>
+                                <div class="gui-input">x₀ = 3.0</div>
+
+                                <div class="gui-button">Calculate</div>
+
+                                <div class="gui-result">
+                                    Result: x = 2.000
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <h3>Numerical Methods Workbench (with GUI)</h3>
 
-            <h3>Numerical Methods Workbench (with GUI)</h3>
-        </a>
-
-
-        <!-- PROJECT 2: SCIENTIFIC CALCULATOR -->
-        <a href="#" class="project-card">
-            <div class="project-image calculator-preview">
-
-                <div class="calculator">
-                    <div class="calculator-brand">CASIO</div>
-
-                    <div class="calculator-screen">
-                        <div>sin(30) + cos(60)</div>
-                        <strong>1.000</strong>
-                    </div>
-
-                    <div class="calculator-mode">MODE · SHIFT · ALPHA</div>
-
-                    <div class="calculator-keys">
-                        <span>SHIFT</span>
-                        <span>ALPHA</span>
-                        <span>MODE</span>
-                        <span>DEL</span>
-                        <span>AC</span>
-
-                        <span>sin</span>
-                        <span>cos</span>
-                        <span>tan</span>
-                        <span>log</span>
-                        <span>ln</span>
-
-                        <span>7</span>
-                        <span>8</span>
-                        <span>9</span>
-                        <span>÷</span>
-                        <span>√</span>
-
-                        <span>4</span>
-                        <span>5</span>
-                        <span>6</span>
-                        <span>×</span>
-                        <span>^</span>
-
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
-                        <span>−</span>
-                        <span>π</span>
-
-                        <span>0</span>
-                        <span>.</span>
-                        <span>EXP</span>
-                        <span>+</span>
-                        <span class="equals">=</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <h3>Scientific Calculator</h3>
-        </a>
+            </a>
 
 
-        <!-- PROJECT 3: UNIT CONVERTER -->
-        <a href="#" class="project-card">
-            <div class="project-image converter-preview">
+            <!-- PROJECT 2: SCIENTIFIC CALCULATOR -->
 
-                <div class="converter-window">
-                    <div class="converter-header">
-                        Unit Converter
-                    </div>
+            <a href="#" class="project-card">
 
-                    <div class="converter-tabs">
-                        <span>Physics</span>
-                        <span>Astronomy</span>
-                        <span>Chemistry</span>
-                    </div>
+                <div class="project-image calculator-preview">
 
-                    <div class="converter-content">
-                        <div class="converter-label">Convert From</div>
-                        <div class="converter-input">
-                            299792458 <small>m/s</small>
+                    <div class="calculator">
+
+                        <div class="calculator-brand">CASIO</div>
+
+                        <div class="calculator-screen">
+                            <div>sin(30) + cos(60)</div>
+                            <strong>1.000</strong>
                         </div>
 
-                        <div class="converter-arrow">↓</div>
-
-                        <div class="converter-label">Convert To</div>
-                        <div class="converter-input">
-                            299792.458 <small>km/s</small>
+                        <div class="calculator-mode">
+                            MODE · SHIFT · ALPHA
                         </div>
 
-                        <div class="converter-result">
-                            Conversion Complete
+                        <div class="calculator-keys">
+
+                            <span>SHIFT</span>
+                            <span>ALPHA</span>
+                            <span>MODE</span>
+                            <span>DEL</span>
+                            <span>AC</span>
+
+                            <span>sin</span>
+                            <span>cos</span>
+                            <span>tan</span>
+                            <span>log</span>
+                            <span>ln</span>
+
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>÷</span>
+                            <span>√</span>
+
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>×</span>
+                            <span>^</span>
+
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>−</span>
+                            <span>π</span>
+
+                            <span>0</span>
+                            <span>.</span>
+                            <span>EXP</span>
+                            <span>+</span>
+                            <span class="equals">=</span>
+
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <h3>Scientific Calculator</h3>
 
-            <h3>Unit Converter</h3>
-        </a>
+            </a>
 
-    </div>
 
-</main>
+            <!-- PROJECT 3: UNIT CONVERTER -->
+
+            <a href="#" class="project-card">
+
+                <div class="project-image converter-preview">
+
+                    <div class="converter-window">
+
+                        <div class="converter-header">
+                            Unit Converter
+                        </div>
+
+                        <div class="converter-tabs">
+                            <span>Physics</span>
+                            <span>Astronomy</span>
+                            <span>Chemistry</span>
+                        </div>
+
+                        <div class="converter-content">
+
+                            <div class="converter-label">Convert From</div>
+
+                            <div class="converter-input">
+                                299792458 <small>m/s</small>
+                            </div>
+
+                            <div class="converter-arrow">↓</div>
+
+                            <div class="converter-label">Convert To</div>
+
+                            <div class="converter-input">
+                                299792.458 <small>km/s</small>
+                            </div>
+
+                            <div class="converter-result">
+                                Conversion Complete
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Unit Converter</h3>
+
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
