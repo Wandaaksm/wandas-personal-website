@@ -1,198 +1,147 @@
 
-<!DOCTYPE html>
-<html lang="en">
+<main class="container projects-page">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>My Projects</h1>
 
-    <title>Wanda's Personal Website | Projects</title>
+    <div class="projects-grid">
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+        <!-- PROJECT 1: NUMERICAL METHODS -->
+        <a href="#" class="project-card">
+            <div class="project-image numerical-preview">
 
-<body>
+                <div class="gui-window">
+                    <div class="gui-header">
+                        Numerical Methods Workbench
+                    </div>
 
-<div class="container">
+                    <div class="gui-body">
+                        <div class="gui-sidebar">
+                            <span>Root Finding</span>
+                            <span>Optimization</span>
+                            <span>Interpolation</span>
+                            <span>Integration</span>
+                        </div>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar">
+                        <div class="gui-main">
+                            <div class="gui-label">Function Input</div>
+                            <div class="gui-input">f(x) = x² - 4</div>
 
-        <a href="index.html" class="site-name">
-            Wanda's Personal Website
+                            <div class="gui-label">Initial Guess</div>
+                            <div class="gui-input">x₀ = 3.0</div>
+
+                            <div class="gui-button">Calculate</div>
+
+                            <div class="gui-result">
+                                Result: x = 2.000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>Numerical Methods Workbench (with GUI)</h3>
         </a>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="teaching.html">Teaching</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
 
-    </nav>
+        <!-- PROJECT 2: SCIENTIFIC CALCULATOR -->
+        <a href="#" class="project-card">
+            <div class="project-image calculator-preview">
 
-    <!-- PROJECTS CONTENT -->
-    <main class="container projects-page">
+                <div class="calculator">
+                    <div class="calculator-brand">CASIO</div>
 
-        <h1>My Projects</h1>
+                    <div class="calculator-screen">
+                        <div>sin(30) + cos(60)</div>
+                        <strong>1.000</strong>
+                    </div>
 
-        <p class="projects-intro">
-            A collection of projects exploring engineering,
-            mathematics, and computational methods.
-        </p>
+                    <div class="calculator-mode">MODE · SHIFT · ALPHA</div>
 
-        <div class="projects-grid">
+                    <div class="calculator-keys">
+                        <span>SHIFT</span>
+                        <span>ALPHA</span>
+                        <span>MODE</span>
+                        <span>DEL</span>
+                        <span>AC</span>
 
-            <!-- PROJECT 1 -->
-            <a href="#" class="project-card">
+                        <span>sin</span>
+                        <span>cos</span>
+                        <span>tan</span>
+                        <span>log</span>
+                        <span>ln</span>
 
-                <div class="project-image doppler-image">
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>÷</span>
+                        <span>√</span>
 
-                    <div class="mock-window">
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>×</span>
+                        <span>^</span>
 
-                        <div class="mock-header">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <b>Doppler Analysis</b>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>−</span>
+                        <span>π</span>
+
+                        <span>0</span>
+                        <span>.</span>
+                        <span>EXP</span>
+                        <span>+</span>
+                        <span class="equals">=</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>Scientific Calculator</h3>
+        </a>
+
+
+        <!-- PROJECT 3: UNIT CONVERTER -->
+        <a href="#" class="project-card">
+            <div class="project-image converter-preview">
+
+                <div class="converter-window">
+                    <div class="converter-header">
+                        Unit Converter
+                    </div>
+
+                    <div class="converter-tabs">
+                        <span>Physics</span>
+                        <span>Astronomy</span>
+                        <span>Chemistry</span>
+                    </div>
+
+                    <div class="converter-content">
+                        <div class="converter-label">Convert From</div>
+                        <div class="converter-input">
+                            299792458 <small>m/s</small>
                         </div>
 
-                        <div class="mock-content">
+                        <div class="converter-arrow">↓</div>
 
-                            <div class="mock-stat">
-                                <small>Satellite Velocity</small>
-                                <strong>7.5 km/s</strong>
-                            </div>
+                        <div class="converter-label">Convert To</div>
+                        <div class="converter-input">
+                            299792.458 <small>km/s</small>
+                        </div>
 
-                            <div class="mock-stat">
-                                <small>Doppler Shift</small>
-                                <strong>15.2 kHz</strong>
-                            </div>
-
-                            <div class="mock-chart">
-                                <svg viewBox="0 0 300 100">
-                                    <polyline
-                                        points="0,75 30,65 60,70 90,35 120,25 150,42 180,55 210,30 240,45 270,65 300,70"
-                                        fill="none"
-                                        stroke="#4b8bd8"
-                                        stroke-width="3"/>
-                                </svg>
-                            </div>
-
-                            <small>Frequency vs Time</small>
-
+                        <div class="converter-result">
+                            Conversion Complete
                         </div>
                     </div>
                 </div>
 
-                <h3>Satellite Doppler Analysis Dashboard</h3>
+            </div>
 
-            </a>
+            <h3>Unit Converter</h3>
+        </a>
 
+    </div>
 
-            <!-- PROJECT 2 -->
-            <a href="#" class="project-card">
-
-                <div class="project-image numerical-image">
-
-                    <div class="mock-window">
-
-                        <div class="mock-header">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <b>Numerical Workbench</b>
-                        </div>
-
-                        <div class="mock-content">
-
-                            <div class="mock-input">
-                                Method: Newton-Raphson
-                            </div>
-
-                            <div class="mock-input">
-                                Initial Guess: 1.5
-                            </div>
-
-                            <div class="mock-result">
-                                Root = 2.0000
-                            </div>
-
-                            <div class="mock-chart">
-                                <svg viewBox="0 0 300 100">
-                                    <polyline
-                                        points="0,85 35,80 70,65 105,35 140,15 175,35 210,65 245,80 300,85"
-                                        fill="none"
-                                        stroke="#438b75"
-                                        stroke-width="3"/>
-                                </svg>
-                            </div>
-
-                            <small>Convergence Visualization</small>
-
-                        </div>
-                    </div>
-                </div>
-
-                <h3>Numerical Methods Workbench</h3>
-
-            </a>
-
-
-            <!-- PROJECT 3 -->
-            <a href="#" class="project-card">
-
-                <div class="project-image rf-image">
-
-                    <div class="mock-window">
-
-                        <div class="mock-header">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <b>RF Link Analyzer</b>
-                        </div>
-
-                        <div class="mock-content">
-
-                            <div class="mock-input">
-                                Frequency: 5 GHz
-                            </div>
-
-                            <div class="mock-input">
-                                Distance: 2 km
-                            </div>
-
-                            <div class="mock-stat">
-                                <small>Free Space Path Loss</small>
-                                <strong>112.4 dB</strong>
-                            </div>
-
-                            <div class="mock-stat">
-                                <small>Link Margin</small>
-                                <strong>18.6 dB</strong>
-                            </div>
-
-                            <div class="mock-result">
-                                Link Status: Available
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <h3>RF Link Budget Analyzer</h3>
-
-            </a>
-
-        </div>
-
-    </main>
-
-    <footer>
-    </footer>
-
-</div>
-
-</body>
-</html>
+</main>
