@@ -99,9 +99,6 @@ p {
     margin-top: 30px;
 }
 
-
-/* Profile */
-
 .profile {
     text-align: center;
 }
@@ -125,9 +122,6 @@ p {
     color: #777777;
 }
 
-
-/* Main content */
-
 .main-content {
     min-width: 0;
 }
@@ -146,9 +140,6 @@ p {
     color: #444444;
 }
 
-
-/* Interests and Education */
-
 .details-layout {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
@@ -165,9 +156,6 @@ p {
     margin-bottom: 7px;
     color: #444444;
 }
-
-
-/* Education */
 
 .education-item {
     margin-bottom: 22px;
@@ -195,6 +183,530 @@ p {
     color: #888888;
     margin-left: 25px;
     margin-top: 4px;
+}
+
+
+/* ========================================
+   PROJECTS PAGE
+======================================== */
+
+.projects-page {
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+
+.projects-title {
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+
+/* Project grid */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+
+/* Project card */
+
+.project-card {
+    display: block;
+    min-width: 0;
+    color: #333333;
+}
+
+.project-preview {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.project-card:hover .project-preview {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+.project-card h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.project-card:hover h2 {
+    color: #777777;
+}
+
+
+/* ========================================
+   PROJECT 1: NUMERICAL WORKBENCH
+======================================== */
+
+.numerical-preview {
+    background-color: #e9eff1;
+}
+
+.workbench-window {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+}
+
+.window-header {
+    height: 29px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 8px;
+    color: #555555;
+}
+
+.window-dots {
+    display: flex;
+    gap: 4px;
+    position: absolute;
+    left: 9px;
+}
+
+.window-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #c7c7c7;
+}
+
+.workbench-content {
+    display: grid;
+    grid-template-columns: 31% 69%;
+    height: calc(100% - 29px);
+}
+
+.workbench-sidebar {
+    background-color: #f7f8f8;
+    border-right: 1px solid #e9e9e9;
+    padding: 12px 7px;
+}
+
+.sidebar-heading {
+    font-size: 7px;
+    font-weight: bold;
+    color: #8a969b;
+    margin-bottom: 10px;
+    letter-spacing: 0.7px;
+}
+
+.sidebar-option {
+    font-size: 7px;
+    color: #69777c;
+    padding: 6px 5px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+}
+
+.sidebar-option.selected {
+    background-color: #dce9ed;
+    color: #416d7b;
+    font-weight: bold;
+}
+
+.workbench-main {
+    padding: 11px 10px;
+    min-width: 0;
+}
+
+.workbench-heading {
+    font-size: 10px;
+    font-weight: bold;
+    color: #344b54;
+}
+
+.workbench-subheading {
+    font-size: 7px;
+    color: #9aa2a5;
+    margin-bottom: 9px;
+}
+
+.equation-box {
+    background-color: #f5f8f9;
+    border: 1px solid #e5ebed;
+    border-radius: 4px;
+    padding: 6px;
+    text-align: center;
+    font-size: 9px;
+    color: #4e6c78;
+}
+
+.parameter-row {
+    display: flex;
+    gap: 8px;
+    margin: 9px 0;
+}
+
+.parameter-row div {
+    flex: 1;
+    background-color: #f8f9f9;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.parameter-row span,
+.parameter-row strong {
+    display: block;
+    font-size: 6px;
+}
+
+.parameter-row span {
+    color: #90999c;
+}
+
+.parameter-row strong {
+    color: #4b626b;
+    margin-top: 2px;
+}
+
+.graph-box {
+    height: 68px;
+    border: 1px solid #edf0f1;
+    border-radius: 3px;
+    padding: 3px;
+    position: relative;
+}
+
+.graph-label {
+    font-size: 6px;
+    color: #929b9e;
+}
+
+.graph-box svg {
+    width: 100%;
+    height: 48px;
+}
+
+.workbench-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #edf4f5;
+    padding: 5px 7px;
+    margin-top: 7px;
+    border-radius: 3px;
+}
+
+.workbench-result span {
+    font-size: 7px;
+    color: #61767d;
+}
+
+.workbench-result strong {
+    font-size: 10px;
+    color: #426b79;
+}
+
+
+
+/* ========================================
+   PROJECT 2: CASIO FX-991ES STYLE
+======================================== */
+
+.calculator-preview {
+    background-color: #e6efed;
+}
+
+.calculator-device {
+    width: 74%;
+    height: 96%;
+    background: linear-gradient(
+        145deg,
+        #b7d5ce,
+        #82b8ab
+    );
+    border: 2px solid #628f84;
+    border-radius: 11px;
+    padding: 7px 10px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+}
+
+.casio-brand {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #254d43;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.casio-model {
+    font-size: 8px;
+    font-weight: bold;
+    color: #365f54;
+    margin: 2px 0 6px;
+    text-align: left;
+}
+
+.casio-model span {
+    font-size: 6px;
+    font-weight: normal;
+    margin-left: 3px;
+}
+
+
+/* LCD DISPLAY */
+
+.casio-display {
+    height: 23%;
+    min-height: 55px;
+    background-color: #dce7cb;
+    border: 3px solid #54776c;
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: #354b3e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.13);
+}
+
+.display-indicators {
+    display: flex;
+    gap: 8px;
+    font-size: 6px;
+    font-weight: bold;
+}
+
+.display-expression {
+    font-family: monospace;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.display-answer {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* KEYPAD */
+
+.casio-keypad {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, minmax(0, 1fr));
+    gap: 4px;
+    padding-top: 7px;
+}
+
+.casio-key {
+    background: linear-gradient(
+        180deg,
+        #f2f3f0,
+        #d9dfda
+    );
+    border: 1px solid #8caaa0;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #78978c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #354c44;
+    font-size: 7px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.casio-key.shift-key {
+    background: #e6c95c;
+    color: #51451d;
+    border-color: #b59a3c;
+    box-shadow: 0 2px 0 #a58a35;
+}
+
+.casio-key.alpha-key {
+    background: #d58a82;
+    color: #ffffff;
+    border-color: #b56d65;
+    box-shadow: 0 2px 0 #9c5c55;
+}
+
+.casio-key.operator-key {
+    background: #c5d8d1;
+    color: #355e51;
+}
+
+.casio-key.equals-key {
+    background: #527e70;
+    color: #ffffff;
+    border-color: #42695d;
+    box-shadow: 0 2px 0 #35574c;
+}
+
+
+/* SMALL SCREEN ADJUSTMENT */
+
+@media (max-width: 600px) {
+
+    .calculator-device {
+        width: 74%;
+    }
+
+}
+
+
+
+/* ========================================
+   PROJECT 3: UNIT CONVERTER
+======================================== */
+
+.converter-preview {
+    background-color: #edf0f3;
+}
+
+.converter-window {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+}
+
+.converter-header {
+    height: 31px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ebed;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 9px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #52616b;
+}
+
+.converter-logo {
+    background-color: #668c9a;
+    color: #ffffff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 7px;
+}
+
+.converter-content {
+    display: grid;
+    grid-template-columns: 31% 69%;
+    height: calc(100% - 31px);
+}
+
+.converter-sidebar {
+    background-color: #f7f8f9;
+    padding: 12px 6px;
+    border-right: 1px solid #e9ebed;
+}
+
+.converter-menu {
+    font-size: 7px;
+    color: #75818a;
+    padding: 7px 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.converter-menu.active {
+    background-color: #e1ebef;
+    color: #527d8b;
+    font-weight: bold;
+}
+
+.converter-main {
+    padding: 12px 10px;
+    min-width: 0;
+}
+
+.converter-main h3 {
+    font-size: 10px;
+    color: #435c67;
+    margin-bottom: 2px;
+}
+
+.converter-main p {
+    font-size: 7px;
+    color: #9ba3a8;
+    margin-bottom: 9px;
+}
+
+.converter-input {
+    background-color: #f7f9fa;
+    border: 1px solid #e5e9eb;
+    border-radius: 4px;
+    padding: 6px 7px;
+}
+
+.converter-input span,
+.converter-input strong,
+.converter-input small {
+    display: block;
+}
+
+.converter-input span {
+    font-size: 6px;
+    color: #8c969b;
+}
+
+.converter-input strong {
+    font-size: 13px;
+    color: #435e69;
+    margin: 2px 0;
+}
+
+.converter-input small {
+    font-size: 6px;
+    color: #879197;
+}
+
+.converter-input.result {
+    background-color: #edf4f5;
+    border-color: #dbe7e9;
+}
+
+.converter-arrow {
+    text-align: center;
+    color: #7897a2;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+.converter-button {
+    margin-top: 9px;
+    padding: 5px;
+    text-align: center;
+    background-color: #668c9a;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 7px;
+    font-weight: bold;
 }
 
 
@@ -245,9 +757,6 @@ p {
     margin-bottom: 12px;
 }
 
-
-/* Teaching subject cards */
-
 .teaching-subjects {
     display: flex;
     flex-wrap: wrap;
@@ -269,9 +778,6 @@ p {
 .subject-card:hover {
     background-color: #e2e2e2;
 }
-
-
-/* Teaching topics */
 
 .teaching-topic-title {
     font-size: 14px;
@@ -357,6 +863,10 @@ footer {
     .nav-links {
         gap: 18px;
     }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 
@@ -435,5 +945,22 @@ footer {
 
     .contact-icon {
         font-size: 36px;
+    }
+
+    .projects-title {
+        font-size: 24px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-preview {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-card h2 {
+        font-size: 17px;
     }
 }
