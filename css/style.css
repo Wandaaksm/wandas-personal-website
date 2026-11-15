@@ -721,7 +721,7 @@ p {
     margin: 0 auto 35px;
     line-height: 1.9;
     color: #555555;
-    text-align: justify;
+    text-align: left;
 }
 
 .teaching-item {
