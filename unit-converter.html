@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Converter | Wanda's Personal Website</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================
+   UNIT CONVERTER THEME
+===================================== */
+
+:root {
+    --uc-cyan: #48C7D4;
+    --uc-aqua: #8DE0E2;
+    --uc-mint: #66C2A5;
+    --uc-purple: #5E4FA2;
+    --uc-dark: #294D60;
+    --uc-grey: #84959F;
+    --uc-light: #F3F8F9;
+    --uc-border: #E4ECEF;
+}
+
+.uc-page {
+    max-width: 900px;
+    margin: 10px auto 80px;
+}
+
+.uc-heading {
+    margin-bottom: 25px;
+}
+
+.uc-heading h1 {
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+.uc-heading p {
+    color: #82929B;
+    font-size: 14px;
+}
+
+/* CATEGORY NAVIGATION */
+
+.uc-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.uc-category {
+    border: 1px solid var(--uc-border);
+    border-radius: 12px;
+    padding: 15px 8px;
+    background: white;
+    color: #657984;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+}
+
+.uc-category .uc-category-icon {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.uc-category span:last-child {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.uc-category:hover {
+    border-color: var(--uc-cyan);
+    transform: translateY(-2px);
+}
+
+.uc-category.active {
+    background: #EAF9FA;
+    border-color: var(--uc-cyan);
+    color: #268B9B;
+    box-shadow: 0 4px 15px rgba(72,199,212,.10);
+}
+
+/* MAIN PANEL */
+
+.uc-panel {
+    background: white;
+    border: 1px solid var(--uc-border);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(43,95,112,.055);
+}
+
+.uc-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.uc-panel-header h2 {
+    font-size: 20px;
+    margin: 0;
+    color: var(--uc-dark);
+}
+
+.uc-panel-header p {
+    font-size: 12px;
+    color: #91A2AA;
+    margin-top: 4px;
+}
+
+.uc-status {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #399C83;
+    background: #E8F7F0;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+/* QUANTITY */
+
+.uc-quantity {
+    margin-bottom: 20px;
+}
+
+.uc-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #758994;
+    margin-bottom: 8px;
+    letter-spacing: .4px;
+}
+
+.uc-select,
+.uc-input {
+    width: 100%;
+    border: 1px solid var(--uc-border);
+    border-radius: 10px;
+    padding: 13px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--uc-dark);
+    background: #FAFCFD;
+    outline: none;
+    transition: .2s;
+}
+
+.uc-select:focus,
+.uc-input:focus {
+    border-color: var(--uc-cyan);
+    box-shadow: 0 0 0 3px rgba(72,199,212,.10);
+}
+
+/* CONVERSION LAYOUT */
+
+.uc-conversion {
+    display: grid;
+    grid-template-columns: 1fr 45px 1fr;
+    gap: 12px;
+    align-items: end;
+}
+
+.uc-field {
+    min-width: 0;
+}
+
+.uc-swap {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #E7F7F8;
+    color: #329CAB;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: .2s;
+}
+
+.uc-swap:hover {
+    background: #D3F0F1;
+    transform: rotate(180deg);
+}
+
+.uc-input {
+    height: 57px;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: -.5px;
+}
+
+.uc-result {
+    min-height: 57px;
+    border: 1px solid #D7EFEB;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#F0FBF9,#E9F7F9);
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #327F83;
+    font-size: 21px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+/* UNIT SELECT */
+
+.uc-unit {
+    margin-top: 9px;
+    font-size: 13px;
+}
+
+/* ACTIONS */
+
+.uc-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 23px;
+}
+
+.uc-action {
+    padding: 11px 19px;
+    border-radius: 9px;
+    border: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.uc-copy {
+    background: linear-gradient(135deg,var(--uc-cyan),var(--uc-mint));
+    color: white;
+}
+
+.uc-copy:hover {
+    filter: brightness(.96);
+    transform: translateY(-1px);
+}
+
+.uc-reset {
+    background: #F0F3F5;
+    color: #71838D;
+}
+
+.uc-reset:hover {
+    background: #E6ECEF;
+}
+
+/* RESULT INFORMATION */
+
+.uc-information {
+    margin-top: 23px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--uc-purple);
+    background: #F7F5FC;
+    border-radius: 0 9px 9px 0;
+}
+
+.uc-information-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--uc-purple);
+    margin-bottom: 4px;
+}
+
+.uc-information p {
+    font-size: 12px;
+    color: #7F8197;
+    line-height: 1.7;
+}
+
+.uc-footer-note {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 11px;
+    color: #A0ADB3;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:650px) {
+
+    .uc-page {
+        margin-top: 0;
+    }
+
+    .uc-heading h1 {
+        font-size: 25px;
+    }
+
+    .uc-categories {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .uc-panel {
+        padding: 19px;
+    }
+
+    .uc-panel-header {
+        align-items: flex-start;
+    }
+
+    .uc-conversion {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .uc-swap {
+        margin: 0 auto;
+        transform: rotate(90deg);
+    }
+
+    .uc-swap:hover {
+        transform: rotate(270deg);
+    }
+
+    .uc-input,
+    .uc-result {
+        font-size: 20px;
+    }
+
+    .uc-actions {
+        flex-wrap: wrap;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="site-name">
+            Wanda's Personal Website
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- UNIT CONVERTER -->
+
+    <main class="uc-page">
+
+        <div class="uc-heading">
+            <h1>Unit Converter</h1>
+            <p>A multi-category unit conversion workbench.</p>
+        </div>
+
+
+        <!-- CATEGORY BUTTONS -->
+
+        <div class="uc-categories">
+
+            <button class="uc-category active" data-category="mathematics">
+                <span class="uc-category-icon">∠</span>
+                <span>Mathematics</span>
+            </button>
+
+            <button class="uc-category" data-category="physics">
+                <span class="uc-category-icon">⚛</span>
+                <span>Physics</span>
+            </button>
+
+            <button class="uc-category" data-category="astronomy">
+                <span class="uc-category-icon">✦</span>
+                <span>Astronomy</span>
+            </button>
+
+            <button class="uc-category" data-category="chemistry">
+                <span class="uc-category-icon">⌬</span>
+                <span>Chemistry</span>
+            </button>
+
+        </div>
+
+
+        <!-- CONVERTER PANEL -->
+
+        <section class="uc-panel">
+
+            <div class="uc-panel-header">
+
+                <div>
+                    <h2 id="uc-title">Mathematics Converter</h2>
+                    <p id="uc-description">Mathematical quantities and measurements</p>
+                </div>
+
+                <span class="uc-status">READY</span>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="uc-quantity">
+
+                <label class="uc-label" for="uc-quantity">
+                    CONVERSION TYPE
+                </label>
+
+                <select class="uc-select" id="uc-quantity"></select>
+
+            </div>
+
+
+            <!-- CONVERSION FIELDS -->
+
+            <div class="uc-conversion">
+
+                <div class="uc-field">
+
+                    <label class="uc-label" for="uc-input">
+                        FROM
+                    </label>
+
+                    <input
+                        type="number"
+                        id="uc-input"
+                        class="uc-input"
+                        value="180"
+                        step="any"
+                    >
+
+                    <select id="uc-from" class="uc-select uc-unit"></select>
+
+                </div>
+
+
+                <button class="uc-swap" id="uc-swap" title="Swap units">
+                    ⇄
+                </button>
+
+
+                <div class="uc-field">
+
+                    <label class="uc-label">
+                        TO
+                    </label>
+
+                    <div class="uc-result" id="uc-result">
+                        3.141593
+                    </div>
+
+                    <select id="uc-to" class="uc-select uc-unit"></select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="uc-actions">
+
+                <button class="uc-action uc-copy" id="uc-copy">
+                    Copy Result
+                </button>
+
+                <button class="uc-action uc-reset" id="uc-reset">
+                    Reset
+                </button>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="uc-information">
+
+                <div class="uc-information-title">
+                    CONVERSION INFORMATION
+                </div>
+
+                <p id="uc-information">
+                    Convert angles between degrees, radians, and gradians.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div class="uc-footer-note">
+            Unit Converter Workbench · Mathematics · Physics · Astronomy · Chemistry
+        </div>
+
+    </main>
+
+    <footer></footer>
+
+</div>
+
+
+<script>
+
+/* =====================================
+   CONVERSION DATABASE
+===================================== */
+
+const conversionData = {
+
+    mathematics: {
+
+        title: "Mathematics Converter",
+        description: "Mathematical quantities and measurements",
+
+        quantities: {
+
+            angle: {
+                label: "Angle",
+                info: "Convert angular measurements between degrees, radians, gradians, and arc units.",
+                units: {
+                    "degree": {
+                        label: "Degree (°)",
+                        factor: Math.PI / 180
+                    },
+                    "radian": {
+                        label: "Radian (rad)",
+                        factor: 1
+                    },
+                    "gradian": {
+                        label: "Gradian (gon)",
+                        factor: Math.PI / 200
+                    },
+                    "arcminute": {
+                        label: "Arcminute (′)",
+                        factor: Math.PI / 10800
+                    },
+                    "arcsecond": {
+                        label: "Arcsecond (″)",
+                        factor: Math.PI / 648000
+                    }
+                }
+            },
+
+            area: {
+                label: "Area",
+                info: "Convert common units of area.",
+                units: {
+                    "m2": { label: "Square meter (m²)", factor: 1 },
+                    "km2": { label: "Square kilometer (km²)", factor: 1e6 },
+                    "cm2": { label: "Square centimeter (cm²)", factor: 1e-4 },
+                    "mm2": { label: "Square millimeter (mm²)", factor: 1e-6 },
+                    "hectare": { label: "Hectare (ha)", factor: 10000 },
+                    "acre": { label: "Acre", factor: 4046.8564224 }
+                }
+            },
+
+            volume: {
+                label: "Geometric Volume",
+                info: "Convert cubic and metric volume units.",
+                units: {
+                    "m3": { label: "Cubic meter (m³)", factor: 1 },
+                    "cm3": { label: "Cubic centimeter (cm³)", factor: 1e-6 },
+                    "mm3": { label: "Cubic millimeter (mm³)", factor: 1e-9 },
+                    "liter": { label: "Liter (L)", factor: 0.001 },
+                    "ml": { label: "Milliliter (mL)", factor: 1e-6 }
+                }
+            }
+
+        }
+    },
+
+
+    physics: {
+
+        title: "Physics Converter",
+        description: "Physical quantities and engineering measurements",
+
+        quantities: {
+
+            length: {
+                label: "Length",
+                info: "Convert distances from nanometers to kilometers and miles.",
+                units: {
+                    "m": { label: "Meter (m)", factor: 1 },
+                    "km": { label: "Kilometer (km)", factor: 1000 },
+                    "cm": { label: "Centimeter (cm)", factor: 0.01 },
+                    "mm": { label: "Millimeter (mm)", factor: 0.001 },
+                    "um": { label: "Micrometer (µm)", factor: 1e-6 },
+                    "nm": { label: "Nanometer (nm)", factor: 1e-9 },
+                    "mile": { label: "Mile (mi)", factor: 1609.344 },
+                    "inch": { label: "Inch (in)", factor: 0.0254 },
+                    "foot": { label: "Foot (ft)", factor: 0.3048 }
+                }
+            },
+
+            mass: {
+                label: "Mass",
+                info: "Convert mass between metric and imperial units.",
+                units: {
+                    "kg": { label: "Kilogram (kg)", factor: 1 },
+                    "g": { label: "Gram (g)", factor: 0.001 },
+                    "mg": { label: "Milligram (mg)", factor: 1e-6 },
+                    "tonne": { label: "Metric tonne (t)", factor: 1000 },
+                    "lb": { label: "Pound (lb)", factor: 0.45359237 },
+                    "oz": { label: "Ounce (oz)", factor: 0.028349523125 }
+                }
+            },
+
+            time: {
+                label: "Time",
+                info: "Convert time between seconds, minutes, hours, and days.",
+                units: {
+                    "s": { label: "Second (s)", factor: 1 },
+                    "ms": { label: "Millisecond (ms)", factor: 0.001 },
+                    "min": { label: "Minute (min)", factor: 60 },
+                    "h": { label: "Hour (h)", factor: 3600 },
+                    "day": { label: "Day (d)", factor: 86400 },
+                    "week": { label: "Week", factor: 604800 }
+                }
+            },
+
+            speed: {
+                label: "Velocity",
+                info: "Convert linear speed between m/s, km/h, mph, and knots.",
+                units: {
+                    "ms": { label: "Meter per second (m/s)", factor: 1 },
+                    "kmh": { label: "Kilometer per hour (km/h)", factor: 1 / 3.6 },
+                    "mph": { label: "Mile per hour (mph)", factor: 0.44704 },
+                    "knot": { label: "Knot (kn)", factor: 0.5144444444 }
+                }
+            },
+
+            acceleration: {
+                label: "Acceleration",
+                info: "Convert acceleration measurements.",
+                units: {
+                    "ms2": { label: "Meter per second squared (m/s²)", factor: 1 },
+                    "g": { label: "Standard gravity (g)", factor: 9.80665 },
+                    "cms2": { label: "Centimeter per second squared (cm/s²)", factor: 0.01 }
+                }
+            },
+
+            force: {
+                label: "Force",
+                info: "Convert force between newtons and other common units.",
+                units: {
+                    "N": { label: "Newton (N)", factor: 1 },
+                    "kN": { label: "Kilonewton (kN)", factor: 1000 },
+                    "dyn": { label: "Dyne (dyn)", factor: 1e-5 },
+                    "lbf": { label: "Pound-force (lbf)", factor: 4.4482216153 }
+                }
+            },
+
+            energy: {
+                label: "Energy",
+                info: "Convert energy between joules, calories, and kilowatt-hours.",
+                units: {
+                    "J": { label: "Joule (J)", factor: 1 },
+                    "kJ": { label: "Kilojoule (kJ)", factor: 1000 },
+                    "cal": { label: "Calorie (cal)", factor: 4.184 },
+                    "kcal": { label: "Kilocalorie (kcal)", factor: 4184 },
+                    "Wh": { label: "Watt-hour (Wh)", factor: 3600 },
+                    "kWh": { label: "Kilowatt-hour (kWh)", factor: 3600000 },
+                    "eV": { label: "Electronvolt (eV)", factor: 1.602176634e-19 }
+                }
+            },
+
+            power: {
+                label: "Power",
+                info: "Convert power between watts, kilowatts, and horsepower.",
+                units: {
+                    "W": { label: "Watt (W)", factor: 1 },
+                    "kW": { label: "Kilowatt (kW)", factor: 1000 },
+                    "MW": { label: "Megawatt (MW)", factor: 1e6 },
+                    "hp": { label: "Mechanical horsepower (hp)", factor: 745.6998716 }
+                }
+            },
+
+            pressure: {
+                label: "Pressure",
+                info: "Convert pressure between pascals, bars, atmospheres, and torr.",
+                units: {
+                    "Pa": { label: "Pascal (Pa)", factor: 1 },
+                    "kPa": { label: "Kilopascal (kPa)", factor: 1000 },
+                    "MPa": { label: "Megapascal (MPa)", factor: 1e6 },
+                    "bar": { label: "Bar", factor: 100000 },
+                    "atm": { label: "Atmosphere (atm)", factor: 101325 },
+                    "torr": { label: "Torr", factor: 101325 / 760 },
+                    "psi": { label: "PSI", factor: 6894.757293 }
+                }
+            },
+
+            temperature: {
+                label: "Temperature",
+                info: "Convert temperature between Celsius, Fahrenheit, and Kelvin.",
+                special: "temperature",
+                units: {
+                    "C": { label: "Celsius (°C)" },
+                    "F": { label: "Fahrenheit (°F)" },
+                    "K": { label: "Kelvin (K)" }
+                }
+            }
+
+        }
+    },
+
+
+    astronomy: {
+
+        title: "Astronomy Converter",
+        description: "Astronomical distances, masses, and velocities",
+
+        quantities: {
+
+            distance: {
+                label: "Astronomical Distance",
+                info: "Convert astronomical distances between kilometers, AU, light-years, and parsecs.",
+                units: {
+                    "km": { label: "Kilometer (km)", factor: 1000 },
+                    "AU": { label: "Astronomical Unit (AU)", factor: 149597870700 },
+                    "ly": { label: "Light-year (ly)", factor: 9.4607304725808e15 },
+                    "pc": { label: "Parsec (pc)", factor: 3.08567758149137e16 },
+                    "kpc": { label: "Kiloparsec (kpc)", factor: 3.08567758149137e19 },
+                    "Mpc": { label: "Megaparsec (Mpc)", factor: 3.08567758149137e22 },
+                    "m": { label: "Meter (m)", factor: 1 }
+                }
+            },
+
+            mass: {
+                label: "Astronomical Mass",
+                info: "Convert mass using kilograms, Earth masses, and solar masses.",
+                units: {
+                    "kg": { label: "Kilogram (kg)", factor: 1 },
+                    "earth": { label: "Earth Mass (M⊕)", factor: 5.9722e24 },
+                    "jupiter": { label: "Jupiter Mass (MJ)", factor: 1.89813e27 },
+                    "solar": { label: "Solar Mass (M☉)", factor: 1.98847e30 }
+                }
+            },
+
+            velocity: {
+                label: "Astronomical Velocity",
+                info: "Convert velocities between m/s, km/s, and fractions of the speed of light.",
+                units: {
+                    "ms": { label: "Meter per second (m/s)", factor: 1 },
+                    "kms": { label: "Kilometer per second (km/s)", factor: 1000 },
+                    "c": { label: "Speed of Light (c)", factor: 299792458 }
+                }
+            },
+
+            time: {
+                label: "Astronomical Time",
+                info: "Convert time between seconds, days, Julian years, and years.",
+                units: {
+                    "s": { label: "Second (s)", factor: 1 },
+                    "day": { label: "Day (d)", factor: 86400 },
+                    "year": { label: "Julian Year (yr)", factor: 31557600 },
+                    "hour": { label: "Hour (h)", factor: 3600 },
+                    "min": { label: "Minute (min)", factor: 60 }
+                }
+            }
+
+        }
+    },
+
+
+    chemistry: {
+
+        title: "Chemistry Converter",
+        description: "Chemical quantities and concentration measurements",
+
+        quantities: {
+
+            amount: {
+                label: "Amount of Substance",
+                info: "Convert amounts of substance between moles and their metric subdivisions.",
+                units: {
+                    "mol": { label: "Mole (mol)", factor: 1 },
+                    "mmol": { label: "Millimole (mmol)", factor: 0.001 },
+                    "umol": { label: "Micromole (µmol)", factor: 1e-6 },
+                    "nmol": { label: "Nanomole (nmol)", factor: 1e-9 },
+                    "kmol": { label: "Kilomole (kmol)", factor: 1000 }
+                }
+            },
+
+            concentration: {
+                label: "Molar Concentration",
+                info: "Convert molar concentration between mol/L, mmol/L, and mol/m³.",
+                units: {
+                    "molL": { label: "Mole per liter (mol/L)", factor: 1000 },
+                    "mmolL": { label: "Millimole per liter (mmol/L)", factor: 1 },
+                    "molm3": { label: "Mole per cubic meter (mol/m³)", factor: 1 }
+                }
+            },
+
+            massconcentration: {
+                label: "Mass Concentration",
+                info: "Convert mass concentration between g/L, mg/L, and kg/m³.",
+                units: {
+                    "gL": { label: "Gram per liter (g/L)", factor: 1 },
+                    "mgL": { label: "Milligram per liter (mg/L)", factor: 0.001 },
+                    "kgm3": { label: "Kilogram per cubic meter (kg/m³)", factor: 1 }
+                }
+            },
+
+            volume: {
+                label: "Chemical Volume",
+                info: "Convert common laboratory volume units.",
+                units: {
+                    "L": { label: "Liter (L)", factor: 1 },
+                    "mL": { label: "Milliliter (mL)", factor: 0.001 },
+                    "uL": { label: "Microliter (µL)", factor: 1e-6 },
+                    "m3": { label: "Cubic meter (m³)", factor: 1000 },
+                    "cm3": { label: "Cubic centimeter (cm³)", factor: 0.001 }
+                }
+            },
+
+            pressure: {
+                label: "Chemical Pressure",
+                info: "Convert pressure measurements used in chemical processes and laboratories.",
+                units: {
+                    "Pa": { label: "Pascal (Pa)", factor: 1 },
+                    "kPa": { label: "Kilopascal (kPa)", factor: 1000 },
+                    "bar": { label: "Bar", factor: 100000 },
+                    "atm": { label: "Atmosphere (atm)", factor: 101325 },
+                    "torr": { label: "Torr", factor: 101325 / 760 }
+                }
+            }
+
+        }
+    }
+
+};
+
+
+/* =====================================
+   ELEMENTS
+===================================== */
+
+const categoryButtons = document.querySelectorAll(".uc-category");
+
+const quantitySelect = document.getElementById("uc-quantity");
+const fromSelect = document.getElementById("uc-from");
+const toSelect = document.getElementById("uc-to");
+
+const inputField = document.getElementById("uc-input");
+const resultField = document.getElementById("uc-result");
+
+const titleField = document.getElementById("uc-title");
+const descriptionField = document.getElementById("uc-description");
+const informationField = document.getElementById("uc-information");
+
+let currentCategory = "mathematics";
+
+
+/* =====================================
+   INITIALIZE CATEGORY
+===================================== */
+
+function initializeCategory(category) {
+
+    currentCategory = category;
+
+    const data = conversionData[category];
+
+    titleField.textContent = data.title;
+    descriptionField.textContent = data.description;
+
+    categoryButtons.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.category === category
+        );
+    });
+
+    quantitySelect.innerHTML = "";
+
+    Object.entries(data.quantities).forEach(([key, quantity]) => {
+
+        const option = document.createElement("option");
+
+        option.value = key;
+        option.textContent = quantity.label;
+
+        quantitySelect.appendChild(option);
+
+    });
+
+    initializeQuantity();
+
+}
+
+
+/* =====================================
+   INITIALIZE QUANTITY
+===================================== */
+
+function initializeQuantity() {
+
+    const data = conversionData[currentCategory];
+    const quantity = data.quantities[quantitySelect.value];
+
+    fromSelect.innerHTML = "";
+    toSelect.innerHTML = "";
+
+    Object.entries(quantity.units).forEach(([key, unit]) => {
+
+        const fromOption = document.createElement("option");
+        fromOption.value = key;
+        fromOption.textContent = unit.label;
+
+        const toOption = fromOption.cloneNode(true);
+
+        fromSelect.appendChild(fromOption);
+        toSelect.appendChild(toOption);
+
+    });
+
+    const units = Object.keys(quantity.units);
+
+    fromSelect.value = units[0];
+    toSelect.value = units[1] || units[0];
+
+    informationField.textContent = quantity.info;
+
+    updateConversion();
+
+}
+
+
+/* =====================================
+   CONVERSION ENGINE
+===================================== */
+
+function convertTemperature(value, from, to) {
+
+    let celsius;
+
+    if (from === "C") {
+        celsius = value;
+    }
+
+    else if (from === "F") {
+        celsius = (value - 32) * 5 / 9;
+    }
+
+    else {
+        celsius = value - 273.15;
+    }
+
+    if (to === "C") return celsius;
+
+    if (to === "F") {
+        return celsius * 9 / 5 + 32;
+    }
+
+    return celsius + 273.15;
+
+}
+
+
+function formatResult(number) {
+
+    if (!Number.isFinite(number)) return "Error";
+
+    if (Object.is(number, -0)) number = 0;
+
+    const abs = Math.abs(number);
+
+    if (number !== 0 && (abs >= 1e12 || abs < 1e-8)) {
+        return number.toExponential(7);
+    }
+
+    return Number(number.toPrecision(11)).toLocaleString(
+        "en-US",
+        { maximumSignificantDigits: 11 }
+    );
+
+}
+
+
+function updateConversion() {
+
+    const value = Number(inputField.value);
+
+    if (inputField.value.trim() === "" || !Number.isFinite(value)) {
+        resultField.textContent = "—";
+        return;
+    }
+
+    const quantity =
+        conversionData[currentCategory].quantities[quantitySelect.value];
+
+    const from = fromSelect.value;
+    const to = toSelect.value;
+
+    let result;
+
+    if (quantity.special === "temperature") {
+
+        result = convertTemperature(value, from, to);
+
+    } else {
+
+        const fromFactor = quantity.units[from].factor;
+        const toFactor = quantity.units[to].factor;
+
+        result = value * fromFactor / toFactor;
+
+    }
+
+    resultField.textContent = formatResult(result);
+
+}
+
+
+/* =====================================
+   EVENT LISTENERS
+===================================== */
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+        initializeCategory(button.dataset.category);
+    });
+
+});
+
+
+quantitySelect.addEventListener("change", initializeQuantity);
+
+fromSelect.addEventListener("change", updateConversion);
+toSelect.addEventListener("change", updateConversion);
+
+inputField.addEventListener("input", updateConversion);
+
+
+/* SWAP */
+
+document.getElementById("uc-swap").addEventListener("click", () => {
+
+    const oldFrom = fromSelect.value;
+
+    fromSelect.value = toSelect.value;
+    toSelect.value = oldFrom;
+
+    updateConversion();
+
+});
+
+
+/* RESET */
+
+document.getElementById("uc-reset").addEventListener("click", () => {
+
+    inputField.value = "0";
+    updateConversion();
+
+});
+
+
+/* COPY RESULT */
+
+document.getElementById("uc-copy").addEventListener("click", async () => {
+
+    const result = resultField.textContent;
+
+    if (result === "—" || result === "Error") return;
+
+    try {
+
+        await navigator.clipboard.writeText(result);
+
+        const button = document.getElementById("uc-copy");
+
+        button.textContent = "Copied!";
+
+        setTimeout(() => {
+            button.textContent = "Copy Result";
+        }, 1200);
+
+    } catch (error) {
+
+        const button = document.getElementById("uc-copy");
+
+        button.textContent = "Copy unavailable";
+
+        setTimeout(() => {
+            button.textContent = "Copy Result";
+        }, 1500);
+
+    }
+
+});
+
+
+/* INITIALIZE */
+
+initializeCategory("mathematics");
+
+</script>
+
+</body>
+</html>

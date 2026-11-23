@@ -1144,3 +1144,134 @@ footer {
     }
 
 }
+
+
+/* ========================================
+   PROJECT 3: UNIT CONVERTER PREVIEW
+======================================== */
+
+.unit-preview {
+    background: linear-gradient(135deg, #e5f8fa, #e9e7f5);
+}
+
+.unit-preview-window {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #e5edef;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(44, 99, 115, 0.10);
+}
+
+.unit-preview-header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 9px;
+    background: #f8fbfc;
+    border-bottom: 1px solid #e8eff1;
+    color: #607783;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.unit-preview-logo {
+    background: #5E4FA2;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 8px;
+}
+
+.unit-preview-body {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    height: calc(100% - 30px);
+}
+
+.unit-preview-sidebar {
+    background: #f7fafb;
+    border-right: 1px solid #e8eff1;
+    padding: 12px 6px;
+}
+
+.unit-category {
+    font-size: 7px;
+    padding: 7px 5px;
+    color: #788b95;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.unit-category.active {
+    background: #e1f5f6;
+    color: #328e9b;
+    font-weight: 700;
+}
+
+.unit-preview-main {
+    padding: 12px 10px;
+    min-width: 0;
+}
+
+.unit-preview-label {
+    font-size: 6px;
+    color: #5E4FA2;
+    font-weight: 700;
+    letter-spacing: .7px;
+    margin-bottom: 9px;
+}
+
+.unit-preview-box {
+    background: #f5fafb;
+    border: 1px solid #e5eff1;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.unit-preview-box small,
+.unit-preview-box strong,
+.unit-preview-box span {
+    display: block;
+}
+
+.unit-preview-box small {
+    font-size: 6px;
+    color: #92a4ac;
+}
+
+.unit-preview-box strong {
+    font-size: 14px;
+    color: #315c70;
+    margin: 3px 0;
+}
+
+.unit-preview-box span {
+    font-size: 6px;
+    color: #879ba3;
+}
+
+.unit-preview-box.result {
+    background: #eaf8f4;
+    border-color: #d4eee4;
+}
+
+.unit-preview-box.result strong {
+    color: #398e78;
+}
+
+.unit-preview-arrow {
+    text-align: center;
+    color: #66C2A5;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+@media(max-width:600px) {
+    .unit-preview-body {
+        grid-template-columns: 35% 65%;
+    }
+}

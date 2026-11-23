@@ -5,9 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Wanda's Personal Website | Projects</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,10 +13,7 @@
 
 <div class="container">
 
-    <!-- NAVIGATION -->
-
     <nav class="navbar">
-
         <a href="index.html" class="site-name">
             Wanda's Personal Website
         </a>
@@ -29,11 +24,7 @@
             <li><a href="teaching.html">Teaching</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-
     </nav>
-
-
-    <!-- PROJECTS CONTENT -->
 
     <main class="projects-page">
 
@@ -41,8 +32,7 @@
 
         <div class="projects-grid">
 
-
-            <!-- PROJECT 1: NUMERICAL METHODS WORKBENCH -->
+            <!-- PROJECT 1: NUMERICAL METHODS -->
 
             <a href="#" class="project-card">
 
@@ -51,60 +41,44 @@
                     <div class="workbench-window">
 
                         <div class="window-header">
-
                             <div class="window-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                                <span></span><span></span><span></span>
                             </div>
-
                             <span>Numerical Methods Workbench</span>
-
                         </div>
 
                         <div class="workbench-content">
 
                             <div class="workbench-sidebar">
-
                                 <div class="sidebar-heading">METHODS</div>
                                 <div class="sidebar-option selected">Root Finding</div>
                                 <div class="sidebar-option">Optimization</div>
                                 <div class="sidebar-option">Interpolation</div>
                                 <div class="sidebar-option">Integration</div>
                                 <div class="sidebar-option">Differentiation</div>
-
                             </div>
 
                             <div class="workbench-main">
 
-                                <div class="workbench-heading">
-                                    Root Finding
-                                </div>
-
-                                <div class="workbench-subheading">
-                                    Numerical Analysis
-                                </div>
+                                <div class="workbench-heading">Root Finding</div>
+                                <div class="workbench-subheading">Numerical Analysis</div>
 
                                 <div class="equation-box">
                                     f(x) = x³ - 2x - 5
                                 </div>
 
                                 <div class="parameter-row">
-
                                     <div>
                                         <span>Initial Value</span>
                                         <strong>2.000</strong>
                                     </div>
-
                                     <div>
                                         <span>Tolerance</span>
                                         <strong>0.0001</strong>
                                     </div>
-
                                 </div>
 
                                 <div class="graph-box">
-
                                     <div class="graph-label">Function Plot</div>
 
                                     <svg viewBox="0 0 300 125"
@@ -117,18 +91,14 @@
                                               stroke="#c9d2d8" stroke-width="1"/>
 
                                         <path d="M 15 108 C 70 108, 105 105, 130 88
-                                                 S 170 35, 195 20
-                                                 S 250 -5, 285 -20"
+                                                 S 170 35, 195 20 S 250 -5, 285 -20"
                                               fill="none"
                                               stroke="#568b9d"
                                               stroke-width="3"
                                               stroke-linecap="round"/>
 
-                                        <circle cx="163" cy="65" r="4"
-                                                fill="#d58c55"/>
-
+                                        <circle cx="163" cy="65" r="4" fill="#d58c55"/>
                                     </svg>
-
                                 </div>
 
                                 <div class="workbench-result">
@@ -137,11 +107,8 @@
                                 </div>
 
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
                 <h2>Numerical Methods Workbench</h2>
@@ -152,7 +119,7 @@
             <!-- PROJECT 2: AQUA CALCULATOR -->
 
             <a href="#aqua-calculator-modal"
-               class="project-card aqua-project-card"
+               class="project-card"
                onclick="openAquaCalculator(event)">
 
                 <div class="project-preview aqua-preview">
@@ -165,43 +132,37 @@
                         </div>
 
                         <div class="aqua-screen">
-
-                            <div class="aqua-history">12,000 + 580</div>
-
+                            <div class="aqua-history"></div>
                             <div class="aqua-number">12,580</div>
-
                         </div>
 
                         <div class="aqua-mini-keys">
-
-                            <span class="mini-utility">AC</span>
-                            <span class="mini-utility">+/−</span>
-                            <span class="mini-utility">%</span>
-                            <span class="mini-operator">÷</span>
+                            <span>AC</span>
+                            <span>+/−</span>
+                            <span>%</span>
+                            <span>÷</span>
 
                             <span>7</span>
                             <span>8</span>
                             <span>9</span>
-                            <span class="mini-operator">×</span>
+                            <span>×</span>
 
                             <span>4</span>
                             <span>5</span>
                             <span>6</span>
-                            <span class="mini-operator">−</span>
+                            <span>−</span>
 
                             <span>1</span>
                             <span>2</span>
                             <span>3</span>
-                            <span class="mini-operator">+</span>
+                            <span>+</span>
 
                             <span class="mini-zero">0</span>
                             <span>.</span>
-                            <span class="mini-equals">=</span>
-
+                            <span>=</span>
                         </div>
 
                     </div>
-
                 </div>
 
                 <h2>Aqua Calculator</h2>
@@ -211,47 +172,42 @@
 
             <!-- PROJECT 3: UNIT CONVERTER -->
 
-            <a href="#" class="project-card">
+            <a href="unit-converter.html" class="project-card">
 
-                <div class="project-preview converter-preview">
+                <div class="project-preview unit-preview">
 
-                    <div class="converter-window">
+                    <div class="unit-preview-window">
 
-                        <div class="converter-header">
-                            <span class="converter-logo">UNIT</span>
-                            <span>Converter Workbench</span>
+                        <div class="unit-preview-header">
+                            <span class="unit-preview-logo">UC</span>
+                            <span>UNIT CONVERTER WORKBENCH</span>
                         </div>
 
-                        <div class="converter-content">
+                        <div class="unit-preview-body">
 
-                            <div class="converter-sidebar">
-                                <div class="converter-menu active">Physics</div>
-                                <div class="converter-menu">Astronomy</div>
-                                <div class="converter-menu">Chemistry</div>
+                            <div class="unit-preview-sidebar">
+                                <div class="unit-category active">Mathematics</div>
+                                <div class="unit-category">Physics</div>
+                                <div class="unit-category">Astronomy</div>
+                                <div class="unit-category">Chemistry</div>
                             </div>
 
-                            <div class="converter-main">
+                            <div class="unit-preview-main">
 
-                                <h3>Physics Converter</h3>
+                                <div class="unit-preview-label">PHYSICS / LENGTH</div>
 
-                                <p>Convert physical quantities</p>
-
-                                <div class="converter-input">
-                                    <span>From</span>
+                                <div class="unit-preview-box">
+                                    <small>FROM</small>
                                     <strong>100</strong>
-                                    <small>Kilometers / hour</small>
+                                    <span>Kilometers</span>
                                 </div>
 
-                                <div class="converter-arrow">↓</div>
+                                <div class="unit-preview-arrow">↓</div>
 
-                                <div class="converter-input result">
-                                    <span>To</span>
-                                    <strong>27.78</strong>
-                                    <small>Meters / second</small>
-                                </div>
-
-                                <div class="converter-button">
-                                    Convert Units
+                                <div class="unit-preview-box result">
+                                    <small>TO</small>
+                                    <strong>100,000</strong>
+                                    <span>Meters</span>
                                 </div>
 
                             </div>
@@ -259,7 +215,6 @@
                         </div>
 
                     </div>
-
                 </div>
 
                 <h2>Unit Converter</h2>
@@ -267,396 +222,11 @@
             </a>
 
         </div>
-
     </main>
-
-
-    <!-- AQUA CALCULATOR MODAL -->
-
-    <div class="aqua-modal" id="aqua-calculator-modal">
-
-        <div class="aqua-modal-content">
-
-            <div class="aqua-modal-header">
-
-                <h3>Aqua Calculator</h3>
-
-                <button class="aqua-close"
-                        onclick="closeAquaCalculator()"
-                        aria-label="Close calculator">
-                    ×
-                </button>
-
-            </div>
-
-            <div class="aqua-main-display">
-
-                <div class="aqua-expression"
-                     id="aqua-expression"></div>
-
-                <div class="aqua-result"
-                     id="aqua-result">0</div>
-
-            </div>
-
-            <div class="aqua-modal-keys">
-
-                <button class="aqua-utility" onclick="aquaClear()">AC</button>
-                <button class="aqua-utility" onclick="aquaSign()">+/−</button>
-                <button class="aqua-utility" onclick="aquaPercent()">%</button>
-                <button class="aqua-operator" onclick="aquaOperator('÷')">÷</button>
-
-                <button onclick="aquaNumber('7')">7</button>
-                <button onclick="aquaNumber('8')">8</button>
-                <button onclick="aquaNumber('9')">9</button>
-                <button class="aqua-operator" onclick="aquaOperator('×')">×</button>
-
-                <button onclick="aquaNumber('4')">4</button>
-                <button onclick="aquaNumber('5')">5</button>
-                <button onclick="aquaNumber('6')">6</button>
-                <button class="aqua-operator" onclick="aquaOperator('−')">−</button>
-
-                <button onclick="aquaNumber('1')">1</button>
-                <button onclick="aquaNumber('2')">2</button>
-                <button onclick="aquaNumber('3')">3</button>
-                <button class="aqua-operator" onclick="aquaOperator('+')">+</button>
-
-                <button class="aqua-zero" onclick="aquaNumber('0')">0</button>
-                <button onclick="aquaDecimal()">.</button>
-                <button class="aqua-equals" onclick="aquaEquals()">=</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER -->
 
     <footer></footer>
 
 </div>
-
-
-<!-- AQUA CALCULATOR JAVASCRIPT -->
-
-<script>
-
-let aquaCurrent = "0";
-let aquaStored = null;
-let aquaPending = null;
-let aquaWaiting = false;
-let aquaFinished = false;
-
-const aquaResult = document.getElementById("aqua-result");
-const aquaExpression = document.getElementById("aqua-expression");
-
-
-function openAquaCalculator(event) {
-
-    event.preventDefault();
-
-    document.getElementById("aqua-calculator-modal")
-        .classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-function closeAquaCalculator() {
-
-    document.getElementById("aqua-calculator-modal")
-        .classList.remove("show");
-
-    document.body.style.overflow = "";
-
-}
-
-
-document.getElementById("aqua-calculator-modal")
-    .addEventListener("click", function(event) {
-
-        if (event.target === this) {
-            closeAquaCalculator();
-        }
-
-    });
-
-
-function aquaRender() {
-
-    if (aquaCurrent === "Error") {
-        aquaResult.textContent = "Error";
-        return;
-    }
-
-    let parts = aquaCurrent.split(".");
-    let integer = parts[0];
-    let decimal = parts[1];
-
-    let sign = integer.startsWith("-") ? "-" : "";
-    let digits = sign ? integer.slice(1) : integer;
-
-    digits = digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-    aquaResult.textContent =
-        sign + digits + (decimal !== undefined ? "." + decimal : "");
-
-}
-
-
-function aquaNumber(number) {
-
-    if (aquaCurrent === "Error") aquaClear();
-
-    if (aquaWaiting || aquaFinished) {
-
-        aquaCurrent = number;
-        aquaWaiting = false;
-        aquaFinished = false;
-
-    } else {
-
-        aquaCurrent = aquaCurrent === "0"
-            ? number
-            : aquaCurrent + number;
-
-    }
-
-    aquaRender();
-
-}
-
-
-function aquaDecimal() {
-
-    if (aquaWaiting || aquaFinished) {
-
-        aquaCurrent = "0.";
-        aquaWaiting = false;
-        aquaFinished = false;
-
-    } else if (!aquaCurrent.includes(".")) {
-
-        aquaCurrent += ".";
-
-    }
-
-    aquaRender();
-
-}
-
-
-function aquaCalculate(a, b, operator) {
-
-    switch (operator) {
-
-        case "+":
-            return a + b;
-
-        case "−":
-            return a - b;
-
-        case "×":
-            return a * b;
-
-        case "÷":
-            return b === 0 ? NaN : a / b;
-
-    }
-
-}
-
-
-function aquaClean(number) {
-
-    if (!Number.isFinite(number)) return "Error";
-
-    let result = Number.parseFloat(number.toPrecision(11));
-
-    return String(Object.is(result, -0) ? 0 : result);
-
-}
-
-
-function aquaOperator(operator) {
-
-    if (aquaCurrent === "Error") return;
-
-    let value = Number(aquaCurrent);
-
-    if (aquaPending && !aquaWaiting) {
-
-        value = aquaCalculate(
-            aquaStored,
-            value,
-            aquaPending
-        );
-
-        aquaCurrent = aquaClean(value);
-
-        if (aquaCurrent === "Error") {
-
-            aquaClear();
-            aquaCurrent = "Error";
-            aquaRender();
-            return;
-
-        }
-
-    } else {
-
-        aquaStored = value;
-
-    }
-
-    aquaStored = value;
-    aquaPending = operator;
-    aquaWaiting = true;
-    aquaFinished = false;
-
-    aquaExpression.textContent = "";
-
-    aquaRender();
-
-}
-
-
-function aquaEquals() {
-
-    if (!aquaPending || aquaWaiting || aquaCurrent === "Error") {
-        return;
-    }
-
-    let secondValue = Number(aquaCurrent);
-
-    let result = aquaCalculate(
-        aquaStored,
-        secondValue,
-        aquaPending
-    );
-
-    aquaExpression.textContent =
-        `${aquaStored} ${aquaPending} ${secondValue} =`;
-
-    aquaCurrent = aquaClean(result);
-
-    aquaStored = null;
-    aquaPending = null;
-    aquaWaiting = true;
-    aquaFinished = true;
-
-    aquaRender();
-
-}
-
-
-function aquaClear() {
-
-    aquaCurrent = "0";
-    aquaStored = null;
-    aquaPending = null;
-    aquaWaiting = false;
-    aquaFinished = false;
-
-    aquaExpression.textContent = "";
-
-    aquaRender();
-
-}
-
-
-function aquaSign() {
-
-    if (aquaCurrent === "0" || aquaCurrent === "Error") return;
-
-    aquaCurrent = String(-Number(aquaCurrent));
-
-    aquaRender();
-
-}
-
-
-function aquaPercent() {
-
-    if (aquaCurrent === "Error") return;
-
-    aquaCurrent = aquaClean(Number(aquaCurrent) / 100);
-
-    aquaRender();
-
-}
-
-
-document.addEventListener("keydown", function(event) {
-
-    const modal = document.getElementById("aqua-calculator-modal");
-
-    if (!modal.classList.contains("show")) return;
-
-    if (/^[0-9]$/.test(event.key)) {
-
-        aquaNumber(event.key);
-
-    }
-
-    else if (event.key === ".") {
-
-        aquaDecimal();
-
-    }
-
-    else if (event.key === "Enter" || event.key === "=") {
-
-        event.preventDefault();
-        aquaEquals();
-
-    }
-
-    else if (event.key === "Escape") {
-
-        closeAquaCalculator();
-
-    }
-
-    else if (event.key === "Backspace") {
-
-        if (!aquaWaiting && aquaCurrent !== "Error") {
-
-            aquaCurrent = aquaCurrent.length > 1
-                ? aquaCurrent.slice(0, -1)
-                : "0";
-
-            aquaRender();
-
-        }
-
-    }
-
-    else if (["+", "-", "*", "/"].includes(event.key)) {
-
-        const operators = {
-            "+": "+",
-            "-": "−",
-            "*": "×",
-            "/": "÷"
-        };
-
-        aquaOperator(operators[event.key]);
-
-    }
-
-    else if (event.key === "%") {
-
-        aquaPercent();
-
-    }
-
-});
-
-</script>
 
 </body>
 </html>
