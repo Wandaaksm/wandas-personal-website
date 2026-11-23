@@ -13,6 +13,7 @@
 
 <div class="container">
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <a href="index.html" class="site-name">
             Wanda's Personal Website
@@ -26,13 +27,14 @@
         </ul>
     </nav>
 
+    <!-- PROJECTS -->
     <main class="projects-page">
 
         <h1 class="projects-title">My Projects</h1>
 
         <div class="projects-grid">
 
-            <!-- PROJECT 1: NUMERICAL METHODS -->
+            <!-- PROJECT 1: NUMERICAL METHODS WORKBENCH -->
 
             <a href="#" class="project-card">
 
@@ -42,7 +44,9 @@
 
                         <div class="window-header">
                             <div class="window-dots">
-                                <span></span><span></span><span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
                             <span>Numerical Methods Workbench</span>
                         </div>
@@ -91,7 +95,8 @@
                                               stroke="#c9d2d8" stroke-width="1"/>
 
                                         <path d="M 15 108 C 70 108, 105 105, 130 88
-                                                 S 170 35, 195 20 S 250 -5, 285 -20"
+                                                 S 170 35, 195 20
+                                                 S 250 -5, 285 -20"
                                               fill="none"
                                               stroke="#568b9d"
                                               stroke-width="3"
@@ -132,7 +137,7 @@
                         </div>
 
                         <div class="aqua-screen">
-                            <div class="aqua-history"></div>
+                            <div class="aqua-history">Calculation preview</div>
                             <div class="aqua-number">12,580</div>
                         </div>
 
@@ -179,8 +184,8 @@
                     <div class="unit-preview-window">
 
                         <div class="unit-preview-header">
-                            <span class="unit-preview-logo">UC</span>
-                            <span>UNIT CONVERTER WORKBENCH</span>
+                            <span class="unit-preview-logo">UNIT</span>
+                            <span>UNIT CONVERTER</span>
                         </div>
 
                         <div class="unit-preview-body">
@@ -194,26 +199,24 @@
 
                             <div class="unit-preview-main">
 
-                                <div class="unit-preview-label">PHYSICS / LENGTH</div>
+                                <div class="unit-preview-label">MATHEMATICS</div>
 
                                 <div class="unit-preview-box">
                                     <small>FROM</small>
-                                    <strong>100</strong>
-                                    <span>Kilometers</span>
+                                    <strong>180</strong>
+                                    <span>Degrees (°)</span>
                                 </div>
 
                                 <div class="unit-preview-arrow">↓</div>
 
                                 <div class="unit-preview-box result">
-                                    <small>TO</small>
-                                    <strong>100,000</strong>
-                                    <span>Meters</span>
+                                    <small>RESULT</small>
+                                    <strong>π</strong>
+                                    <span>Radians (rad)</span>
                                 </div>
 
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -224,9 +227,333 @@
         </div>
     </main>
 
+
+    <!-- AQUA CALCULATOR MODAL -->
+
+    <div class="aqua-modal"
+         id="aqua-calculator-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="aqua-title">
+
+        <div class="aqua-modal-content">
+
+            <div class="aqua-modal-header">
+                <div>
+                    <h3 id="aqua-title">Aqua Calculator</h3>
+                    <p>Simple everyday calculator</p>
+                </div>
+
+                <button class="aqua-close"
+                        onclick="closeAquaCalculator()"
+                        aria-label="Close calculator">
+                    ×
+                </button>
+            </div>
+
+            <div class="aqua-main-display">
+                <div class="aqua-expression" id="aqua-expression"></div>
+                <div class="aqua-result" id="aqua-result" aria-live="polite">0</div>
+            </div>
+
+            <div class="aqua-modal-keys">
+
+                <button class="aqua-utility" onclick="aquaClear()">AC</button>
+                <button class="aqua-utility" onclick="aquaSign()">+/−</button>
+                <button class="aqua-utility" onclick="aquaPercent()">%</button>
+                <button class="aqua-operator" onclick="aquaOperator('÷')">÷</button>
+
+                <button onclick="aquaNumber('7')">7</button>
+                <button onclick="aquaNumber('8')">8</button>
+                <button onclick="aquaNumber('9')">9</button>
+                <button class="aqua-operator" onclick="aquaOperator('×')">×</button>
+
+                <button onclick="aquaNumber('4')">4</button>
+                <button onclick="aquaNumber('5')">5</button>
+                <button onclick="aquaNumber('6')">6</button>
+                <button class="aqua-operator" onclick="aquaOperator('−')">−</button>
+
+                <button onclick="aquaNumber('1')">1</button>
+                <button onclick="aquaNumber('2')">2</button>
+                <button onclick="aquaNumber('3')">3</button>
+                <button class="aqua-operator" onclick="aquaOperator('+')">+</button>
+
+                <button class="aqua-zero" onclick="aquaNumber('0')">0</button>
+                <button onclick="aquaDecimal()">.</button>
+                <button class="aqua-equals" onclick="aquaEquals()">=</button>
+
+            </div>
+        </div>
+    </div>
+
+
     <footer></footer>
 
 </div>
+
+
+<!-- AQUA CALCULATOR JAVASCRIPT -->
+
+<script>
+
+let aquaCurrent = "0";
+let aquaStored = null;
+let aquaPending = null;
+let aquaWaiting = false;
+let aquaFinished = false;
+
+const aquaResult = document.getElementById("aqua-result");
+const aquaExpression = document.getElementById("aqua-expression");
+const aquaModal = document.getElementById("aqua-calculator-modal");
+
+function openAquaCalculator(event) {
+    event.preventDefault();
+
+    aquaModal.classList.add("show");
+    document.body.style.overflow = "hidden";
+
+    aquaClear();
+
+    const firstButton = aquaModal.querySelector(".aqua-modal-keys button");
+    if (firstButton) firstButton.focus();
+}
+
+function closeAquaCalculator() {
+    aquaModal.classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+aquaModal.addEventListener("click", function(event) {
+    if (event.target === aquaModal) {
+        closeAquaCalculator();
+    }
+});
+
+function aquaRender() {
+
+    if (aquaCurrent === "Error") {
+        aquaResult.textContent = "Error";
+        return;
+    }
+
+    const parts = aquaCurrent.split(".");
+    let integer = parts[0];
+    const decimal = parts[1];
+
+    const sign = integer.startsWith("-") ? "-" : "";
+    let digits = sign ? integer.slice(1) : integer;
+
+    digits = digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    aquaResult.textContent =
+        sign + digits + (decimal !== undefined ? "." + decimal : "");
+}
+
+function aquaNumber(number) {
+
+    if (aquaCurrent === "Error") aquaClear();
+
+    if (aquaWaiting || aquaFinished) {
+        aquaCurrent = number;
+        aquaWaiting = false;
+        aquaFinished = false;
+    } else {
+        if (aquaCurrent.replace("-", "").replace(".", "").length >= 15) return;
+
+        aquaCurrent = aquaCurrent === "0"
+            ? number
+            : aquaCurrent + number;
+    }
+
+    aquaRender();
+}
+
+function aquaDecimal() {
+
+    if (aquaCurrent === "Error") aquaClear();
+
+    if (aquaWaiting || aquaFinished) {
+        aquaCurrent = "0.";
+        aquaWaiting = false;
+        aquaFinished = false;
+    } else if (!aquaCurrent.includes(".")) {
+        aquaCurrent += ".";
+    }
+
+    aquaRender();
+}
+
+function aquaCalculate(a, b, operator) {
+
+    switch (operator) {
+        case "+":
+            return a + b;
+        case "−":
+            return a - b;
+        case "×":
+            return a * b;
+        case "÷":
+            return b === 0 ? NaN : a / b;
+        default:
+            return NaN;
+    }
+}
+
+function aquaClean(number) {
+
+    if (!Number.isFinite(number)) return "Error";
+
+    const result = Number.parseFloat(number.toPrecision(11));
+
+    return String(Object.is(result, -0) ? 0 : result);
+}
+
+function aquaOperator(operator) {
+
+    if (aquaCurrent === "Error") return;
+
+    let value = Number(aquaCurrent);
+
+    if (aquaPending && !aquaWaiting) {
+
+        value = aquaCalculate(aquaStored, value, aquaPending);
+        aquaCurrent = aquaClean(value);
+
+        if (aquaCurrent === "Error") {
+            aquaStored = null;
+            aquaPending = null;
+            aquaWaiting = false;
+            aquaRender();
+            return;
+        }
+
+    } else {
+        aquaStored = value;
+    }
+
+    aquaStored = Number(aquaCurrent);
+    aquaPending = operator;
+    aquaWaiting = true;
+    aquaFinished = false;
+
+    aquaExpression.textContent = "";
+    aquaRender();
+}
+
+function aquaEquals() {
+
+    if (!aquaPending || aquaWaiting || aquaCurrent === "Error") return;
+
+    const secondValue = Number(aquaCurrent);
+
+    const result = aquaCalculate(
+        aquaStored,
+        secondValue,
+        aquaPending
+    );
+
+    aquaExpression.textContent =
+        `${aquaStored} ${aquaPending} ${secondValue} =`;
+
+    aquaCurrent = aquaClean(result);
+
+    aquaStored = null;
+    aquaPending = null;
+    aquaWaiting = true;
+    aquaFinished = true;
+
+    aquaRender();
+}
+
+function aquaClear() {
+
+    aquaCurrent = "0";
+    aquaStored = null;
+    aquaPending = null;
+    aquaWaiting = false;
+    aquaFinished = false;
+
+    aquaExpression.textContent = "";
+
+    aquaRender();
+}
+
+function aquaSign() {
+
+    if (aquaCurrent === "0" || aquaCurrent === "Error") return;
+
+    aquaCurrent = String(-Number(aquaCurrent));
+    aquaRender();
+}
+
+function aquaPercent() {
+
+    if (aquaCurrent === "Error") return;
+
+    aquaCurrent = aquaClean(Number(aquaCurrent) / 100);
+    aquaWaiting = false;
+    aquaFinished = false;
+
+    aquaRender();
+}
+
+
+// KEYBOARD SUPPORT
+
+document.addEventListener("keydown", function(event) {
+
+    if (!aquaModal.classList.contains("show")) return;
+
+    if (/^[0-9]$/.test(event.key)) {
+        aquaNumber(event.key);
+    }
+
+    else if (event.key === ".") {
+        aquaDecimal();
+    }
+
+    else if (event.key === "Enter" || event.key === "=") {
+        event.preventDefault();
+        aquaEquals();
+    }
+
+    else if (event.key === "Escape") {
+        closeAquaCalculator();
+    }
+
+    else if (event.key === "Backspace") {
+
+        if (!aquaWaiting && aquaCurrent !== "Error") {
+
+            aquaCurrent = aquaCurrent.length > 1
+                ? aquaCurrent.slice(0, -1)
+                : "0";
+
+            if (aquaCurrent === "-") aquaCurrent = "0";
+
+            aquaRender();
+        }
+    }
+
+    else if (["+", "-", "*", "/"].includes(event.key)) {
+
+        const operators = {
+            "+": "+",
+            "-": "−",
+            "*": "×",
+            "/": "÷"
+        };
+
+        aquaOperator(operators[event.key]);
+    }
+
+    else if (event.key === "%") {
+        aquaPercent();
+    }
+
+});
+
+</script>
 
 </body>
 </html>

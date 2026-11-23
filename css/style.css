@@ -11,7 +11,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
+    background: #ffffff;
     color: #333333;
     font-size: 15px;
     line-height: 1.7;
@@ -74,7 +74,7 @@ p {
 .nav-links a {
     font-size: 14px;
     color: #666666;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
 }
 
 .nav-links a:hover,
@@ -142,7 +142,7 @@ p {
 
 .details-layout {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: .8fr 1.2fr;
     gap: 35px;
 }
 
@@ -224,13 +224,12 @@ p {
     justify-content: center;
     align-items: center;
     padding: 13px;
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .project-card:hover .project-preview {
     transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 22px rgba(0,0,0,.10);
 }
 
 .project-card h2 {
@@ -238,7 +237,7 @@ p {
     font-weight: 600;
     margin-top: 15px;
     margin-bottom: 10px;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
 }
 
 .project-card:hover h2 {
@@ -257,15 +256,15 @@ p {
 .workbench-window {
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background: #ffffff;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 3px 12px rgba(0,0,0,.10);
 }
 
 .window-header {
     height: 29px;
-    background-color: #f5f6f7;
+    background: #f5f6f7;
     border-bottom: 1px solid #e7e7e7;
     display: flex;
     align-items: center;
@@ -286,7 +285,7 @@ p {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #c7c7c7;
+    background: #c7c7c7;
 }
 
 .workbench-content {
@@ -296,7 +295,7 @@ p {
 }
 
 .workbench-sidebar {
-    background-color: #f7f8f8;
+    background: #f7f8f8;
     border-right: 1px solid #e9e9e9;
     padding: 12px 7px;
 }
@@ -306,7 +305,7 @@ p {
     font-weight: bold;
     color: #8a969b;
     margin-bottom: 10px;
-    letter-spacing: 0.7px;
+    letter-spacing: .7px;
 }
 
 .sidebar-option {
@@ -318,7 +317,7 @@ p {
 }
 
 .sidebar-option.selected {
-    background-color: #dce9ed;
+    background: #dce9ed;
     color: #416d7b;
     font-weight: bold;
 }
@@ -341,7 +340,7 @@ p {
 }
 
 .equation-box {
-    background-color: #f5f8f9;
+    background: #f5f8f9;
     border: 1px solid #e5ebed;
     border-radius: 4px;
     padding: 6px;
@@ -358,7 +357,7 @@ p {
 
 .parameter-row div {
     flex: 1;
-    background-color: #f8f9f9;
+    background: #f8f9f9;
     padding: 5px;
     border-radius: 3px;
 }
@@ -400,7 +399,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #edf4f5;
+    background: #edf4f5;
     padding: 5px 7px;
     margin-top: 7px;
     border-radius: 3px;
@@ -422,67 +421,50 @@ p {
 ======================================== */
 
 .aqua-preview {
-    background: linear-gradient(
-        135deg,
-        #e5f9fa 0%,
-        #d9f0f4 50%,
-        #dceafa 100%
-    );
-    position: relative;
+    background: linear-gradient(135deg, #e5fbfc, #dceefa);
+    padding: 18px;
 }
 
 .aqua-device {
-    width: 76%;
-    max-width: 220px;
+    width: 205px;
+    max-width: 100%;
     padding: 13px;
     border-radius: 22px;
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #f8feff
-    );
-    border: 1px solid rgba(255,255,255,0.95);
-    box-shadow:
-        0 10px 28px rgba(45,130,155,0.15),
-        0 2px 5px rgba(45,130,155,0.06);
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 10px 30px rgba(45,130,155,.15);
+    border: 1px solid #ffffff;
 }
 
 .aqua-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    color: #45afbd;
+    color: #4aaebd;
     font-size: 8px;
     font-weight: 750;
-    letter-spacing: 1.2px;
-    padding: 2px 4px 10px;
+    letter-spacing: 1.5px;
+    padding: 2px 5px 10px;
 }
 
 .aqua-screen {
-    background: linear-gradient(
-        135deg,
-        #effbfc,
-        #e9f6fa
-    );
-    border: 1px solid #e4f2f4;
+    background: #f0fafb;
     border-radius: 12px;
-    padding: 11px 10px;
+    padding: 15px 10px;
     text-align: right;
-    margin-bottom: 11px;
+    margin-bottom: 12px;
+    min-width: 0;
 }
 
 .aqua-history {
-    font-size: 8px;
-    color: #91adb7;
-    min-height: 14px;
+    font-size: 7px;
+    color: #9ab7bf;
+    margin-bottom: 5px;
 }
 
 .aqua-number {
     color: #244e63;
-    font-size: 26px;
-    font-weight: 400;
+    font-size: 27px;
+    font-weight: 350;
     letter-spacing: -1px;
-    line-height: 1.35;
 }
 
 .aqua-mini-keys {
@@ -492,45 +474,25 @@ p {
 }
 
 .aqua-mini-keys span {
-    height: 31px;
+    height: 34px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: #edf3f5;
+    background: #edf4f6;
     color: #315b6e;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
 }
 
-.aqua-mini-keys .mini-utility {
-    background: #dceff1;
-    color: #438d99;
-}
-
-.aqua-mini-keys .mini-operator {
-    background: linear-gradient(
-        145deg,
-        #70dce0,
-        #36bdcf
-    );
-    color: #ffffff;
-}
-
-.aqua-mini-keys .mini-equals {
-    background: linear-gradient(
-        145deg,
-        #70b9e8,
-        #438fd0
-    );
-    color: #ffffff;
+.aqua-mini-keys span:nth-child(4n) {
+    background: #4fc9d6;
+    color: white;
 }
 
 .aqua-mini-keys .mini-zero {
     grid-column: span 2;
-    border-radius: 25px;
-    justify-content: flex-start;
-    padding-left: 15px;
+    border-radius: 30px;
 }
 
 
@@ -543,12 +505,13 @@ p {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: rgba(20, 49, 65, 0.48);
-    backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(9px);
+    background: rgba(20,49,65,.52);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .aqua-modal.show {
@@ -558,27 +521,19 @@ p {
 .aqua-modal-content {
     width: 100%;
     max-width: 360px;
-    background: linear-gradient(
-        160deg,
-        #ffffff,
-        #f5fcfd
-    );
-    border: 1px solid rgba(255,255,255,0.8);
+    background: #f8feff;
     border-radius: 30px;
     padding: 22px;
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.20),
-        0 4px 15px rgba(45,130,155,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,.2);
     position: relative;
-    animation: aquaAppear 0.22s ease;
+    animation: aquaAppear .2s ease;
 }
 
 @keyframes aquaAppear {
     from {
         opacity: 0;
-        transform: translateY(12px) scale(0.97);
+        transform: translateY(12px) scale(.97);
     }
-
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -589,14 +544,19 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .aqua-modal-header h3 {
     margin: 0;
     color: #287f91;
     font-size: 17px;
-    font-weight: 600;
+}
+
+.aqua-modal-header p {
+    font-size: 11px;
+    color: #91a9b1;
+    margin-top: 3px;
 }
 
 .aqua-close {
@@ -611,57 +571,45 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.2s ease;
+    transition: .2s;
 }
 
 .aqua-close:hover {
-    background: #d5eef1;
+    background: #d2edf0;
     transform: rotate(90deg);
 }
 
-
-/* CALCULATOR DISPLAY */
-
 .aqua-main-display {
-    background: linear-gradient(
-        135deg,
-        #edf9fa,
-        #e5f4f8
-    );
-    border: 1px solid #e2f0f2;
-    border-radius: 18px;
-    padding: 20px 15px;
-    min-height: 112px;
+    background: linear-gradient(135deg, #eaf8fa, #e8f3fa);
+    border: 1px solid #e0f0f2;
+    border-radius: 17px;
+    padding: 22px 15px;
+    min-height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     overflow: hidden;
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .aqua-expression {
     color: #91abb5;
     font-size: 13px;
-    min-height: 22px;
+    min-height: 20px;
     max-width: 100%;
     overflow: hidden;
-    white-space: nowrap;
 }
 
 .aqua-result {
     color: #1b465b;
     font-size: 43px;
-    font-weight: 400;
+    font-weight: 350;
     letter-spacing: -2px;
-    line-height: 1.3;
     max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
 }
-
-
-/* CALCULATOR BUTTONS */
 
 .aqua-modal-keys {
     display: grid;
@@ -675,52 +623,53 @@ p {
     border-radius: 50%;
     background: #edf3f5;
     color: #31566a;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    font-weight: 500;
     cursor: pointer;
-    transition:
-        transform 0.15s ease,
-        filter 0.15s ease,
-        box-shadow 0.15s ease;
-    box-shadow: 0 2px 5px rgba(40,90,105,0.04);
+    transition: transform .15s, background .15s;
+    box-shadow: 0 2px 5px rgba(35,100,120,.05);
     -webkit-tap-highlight-color: transparent;
 }
 
 .aqua-modal-keys button:hover {
-    filter: brightness(0.97);
-    box-shadow: 0 3px 8px rgba(40,90,105,0.09);
+    background: #e1eef1;
 }
 
 .aqua-modal-keys button:active {
-    transform: scale(0.91);
+    transform: scale(.92);
+}
+
+.aqua-modal-keys button:focus-visible,
+.aqua-close:focus-visible {
+    outline: 2px solid #438fd0;
+    outline-offset: 3px;
 }
 
 .aqua-modal-keys .aqua-utility {
     background: #dceff1;
     color: #398b99;
     font-size: 16px;
-    font-weight: 600;
+}
+
+.aqua-modal-keys .aqua-utility:hover {
+    background: #cce8ec;
 }
 
 .aqua-modal-keys .aqua-operator {
-    background: linear-gradient(
-        145deg,
-        #69dce0,
-        #29b9d0
-    );
-    color: #ffffff;
-    font-size: 22px;
+    background: linear-gradient(145deg, #69dce0, #29b9d0);
+    color: white;
+}
+
+.aqua-modal-keys .aqua-operator:hover {
+    background: linear-gradient(145deg, #55cbd3, #20a8c0);
 }
 
 .aqua-modal-keys .aqua-equals {
-    background: linear-gradient(
-        145deg,
-        #69b7eb,
-        #438fd0
-    );
-    color: #ffffff;
-    font-size: 22px;
+    background: linear-gradient(145deg, #69b7eb, #438fd0);
+    color: white;
+}
+
+.aqua-modal-keys .aqua-equals:hover {
+    background: linear-gradient(145deg, #55a7e0, #347ec0);
 }
 
 .aqua-modal-keys .aqua-zero {
@@ -729,420 +678,6 @@ p {
     border-radius: 40px;
     text-align: left;
     padding-left: 27px;
-}
-
-
-/* ========================================
-   PROJECT 3: UNIT CONVERTER
-======================================== */
-
-.converter-preview {
-    background-color: #edf0f3;
-}
-
-.converter-window {
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
-}
-
-.converter-header {
-    height: 31px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ebed;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 0 9px;
-    font-size: 8px;
-    font-weight: bold;
-    color: #52616b;
-}
-
-.converter-logo {
-    background-color: #668c9a;
-    color: #ffffff;
-    padding: 3px 5px;
-    border-radius: 3px;
-    font-size: 7px;
-}
-
-.converter-content {
-    display: grid;
-    grid-template-columns: 31% 69%;
-    height: calc(100% - 31px);
-}
-
-.converter-sidebar {
-    background-color: #f7f8f9;
-    padding: 12px 6px;
-    border-right: 1px solid #e9ebed;
-}
-
-.converter-menu {
-    font-size: 7px;
-    color: #75818a;
-    padding: 7px 5px;
-    border-radius: 3px;
-    margin-bottom: 5px;
-}
-
-.converter-menu.active {
-    background-color: #e1ebef;
-    color: #527d8b;
-    font-weight: bold;
-}
-
-.converter-main {
-    padding: 12px 10px;
-    min-width: 0;
-}
-
-.converter-main h3 {
-    font-size: 10px;
-    color: #435c67;
-    margin-bottom: 2px;
-}
-
-.converter-main p {
-    font-size: 7px;
-    color: #9ba3a8;
-    margin-bottom: 9px;
-}
-
-.converter-input {
-    background-color: #f7f9fa;
-    border: 1px solid #e5e9eb;
-    border-radius: 4px;
-    padding: 6px 7px;
-}
-
-.converter-input span,
-.converter-input strong,
-.converter-input small {
-    display: block;
-}
-
-.converter-input span {
-    font-size: 6px;
-    color: #8c969b;
-}
-
-.converter-input strong {
-    font-size: 13px;
-    color: #435e69;
-    margin: 2px 0;
-}
-
-.converter-input small {
-    font-size: 6px;
-    color: #879197;
-}
-
-.converter-input.result {
-    background-color: #edf4f5;
-    border-color: #dbe7e9;
-}
-
-.converter-arrow {
-    text-align: center;
-    color: #7897a2;
-    font-size: 12px;
-    line-height: 19px;
-}
-
-.converter-button {
-    margin-top: 9px;
-    padding: 5px;
-    text-align: center;
-    background-color: #668c9a;
-    color: #ffffff;
-    border-radius: 4px;
-    font-size: 7px;
-    font-weight: bold;
-}
-
-
-/* ========================================
-   TEACHING PAGE
-======================================== */
-
-.teaching-intro {
-    max-width: 850px;
-    margin: 0 auto 35px;
-    line-height: 1.9;
-    color: #555555;
-    text-align: start;
-}
-
-.teaching-item {
-    margin-bottom: 28px;
-}
-
-.teaching-card {
-    max-width: 850px;
-    background-color: #f8f8f8;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding: 25px 28px;
-    transition: box-shadow 0.2s ease,
-                background-color 0.2s ease;
-}
-
-.teaching-card:hover {
-    background-color: #f7f7f7;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
-}
-
-.teaching-card h2 {
-    font-size: 18px;
-    margin-bottom: 7px;
-}
-
-.teaching-meta {
-    font-size: 13px;
-    color: #888888;
-    margin-bottom: 17px;
-}
-
-.teaching-card p:not(.teaching-meta):not(.teaching-topic-title) {
-    line-height: 1.8;
-    margin-bottom: 12px;
-}
-
-.teaching-subjects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.subject-card {
-    background-color: #eaeaea;
-    border: 1px solid #dedede;
-    border-radius: 7px;
-    padding: 10px 16px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #444444;
-    transition: background-color 0.2s ease;
-}
-
-.subject-card:hover {
-    background-color: #e2e2e2;
-}
-
-.teaching-topic-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-top: 18px;
-    margin-bottom: 5px;
-}
-
-
-/* ========================================
-   CONTACT PAGE
-======================================== */
-
-.contact-page {
-    text-align: center;
-    max-width: 700px;
-    margin: 100px auto 120px;
-}
-
-.contact-page h1 {
-    font-size: 29px;
-    font-weight: 600;
-    margin-bottom: 18px;
-}
-
-.contact-intro {
-    font-size: 15px;
-    line-height: 1.9;
-    color: #666666;
-    margin-bottom: 40px;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 65px;
-}
-
-.contact-icon {
-    font-size: 42px;
-    color: #888888;
-    transition: color 0.2s ease,
-                transform 0.2s ease;
-}
-
-.contact-icon:hover {
-    color: #333333;
-    transform: translateY(-4px);
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
-
-footer {
-    height: 40px;
-}
-
-
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
-
-@media (max-width: 800px) {
-
-    .home-layout {
-        grid-template-columns: 200px 1fr;
-        gap: 35px;
-    }
-
-    .details-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-    }
-
-    .nav-links {
-        gap: 18px;
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .container {
-        width: 90%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 16px;
-        padding: 22px 0;
-        margin-bottom: 30px;
-    }
-
-    .site-name {
-        font-size: 18px;
-    }
-
-    .nav-links {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .home-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .profile {
-        margin-bottom: 5px;
-    }
-
-    .profile-photo {
-        width: 155px;
-        height: 155px;
-    }
-
-    .main-content {
-        width: 100%;
-    }
-
-    .about-section p {
-        text-align: left;
-    }
-
-    .teaching-intro {
-        text-align: left;
-    }
-
-    .teaching-card {
-        padding: 20px;
-    }
-
-    .teaching-card h2 {
-        font-size: 17px;
-    }
-
-    .teaching-subjects {
-        gap: 8px;
-    }
-
-    .subject-card {
-        padding: 8px 12px;
-    }
-
-    .contact-page {
-        margin: 65px auto 80px;
-    }
-
-    .contact-links {
-        gap: 45px;
-    }
-
-    .contact-icon {
-        font-size: 36px;
-    }
-
-    .projects-title {
-        font-size: 24px;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .project-preview {
-        aspect-ratio: 4 / 3;
-    }
-
-    .project-card h2 {
-        font-size: 17px;
-    }
-
-    .aqua-device {
-        width: 205px;
-        max-width: 75%;
-    }
-
-    .aqua-modal {
-        padding: 15px;
-    }
-
-    .aqua-modal-content {
-        max-width: 340px;
-        padding: 20px;
-    }
-
-    .aqua-result {
-        font-size: 39px;
-    }
-
-    .aqua-modal-keys {
-        gap: 9px;
-    }
-
 }
 
 
@@ -1161,7 +696,7 @@ footer {
     border: 1px solid #e5edef;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(44, 99, 115, 0.10);
+    box-shadow: 0 5px 15px rgba(44,99,115,.10);
 }
 
 .unit-preview-header {
@@ -1270,7 +805,272 @@ footer {
     line-height: 22px;
 }
 
-@media(max-width:600px) {
+
+/* ========================================
+   TEACHING PAGE
+======================================== */
+
+.teaching-intro {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    line-height: 1.9;
+    color: #555555;
+    text-align: start;
+}
+
+.teaching-item {
+    margin-bottom: 28px;
+}
+
+.teaching-card {
+    max-width: 850px;
+    background: #f8f8f8;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 25px 28px;
+    transition: box-shadow .2s ease, background-color .2s ease;
+}
+
+.teaching-card:hover {
+    background: #f7f7f7;
+    box-shadow: 0 4px 14px rgba(0,0,0,.045);
+}
+
+.teaching-card h2 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.teaching-meta {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 17px;
+}
+
+.teaching-card p:not(.teaching-meta):not(.teaching-topic-title) {
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.teaching-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.subject-card {
+    background: #eaeaea;
+    border: 1px solid #dedede;
+    border-radius: 7px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444444;
+    transition: background-color .2s ease;
+}
+
+.subject-card:hover {
+    background: #e2e2e2;
+}
+
+.teaching-topic-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 18px;
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   CONTACT PAGE
+======================================== */
+
+.contact-page {
+    text-align: center;
+    max-width: 700px;
+    margin: 100px auto 120px;
+}
+
+.contact-page h1 {
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.contact-intro {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #666666;
+    margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+}
+
+.contact-icon {
+    font-size: 42px;
+    color: #888888;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.contact-icon:hover {
+    color: #333333;
+    transform: translateY(-4px);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    height: 40px;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 800px) {
+
+    .home-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 35px;
+    }
+
+    .details-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+        padding: 22px 0;
+        margin-bottom: 30px;
+    }
+
+    .site-name {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .profile {
+        margin-bottom: 5px;
+    }
+
+    .profile-photo {
+        width: 155px;
+        height: 155px;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .about-section p {
+        text-align: left;
+    }
+
+    .teaching-intro {
+        text-align: left;
+    }
+
+    .teaching-card {
+        padding: 20px;
+    }
+
+    .teaching-card h2 {
+        font-size: 17px;
+    }
+
+    .teaching-subjects {
+        gap: 8px;
+    }
+
+    .subject-card {
+        padding: 8px 12px;
+    }
+
+    .contact-page {
+        margin: 65px auto 80px;
+    }
+
+    .contact-links {
+        gap: 45px;
+    }
+
+    .contact-icon {
+        font-size: 36px;
+    }
+
+    .projects-title {
+        font-size: 24px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-preview {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-card h2 {
+        font-size: 17px;
+    }
+
+    .aqua-modal {
+        padding: 12px;
+    }
+
+    .aqua-modal-content {
+        max-width: 340px;
+        padding: 19px;
+    }
+
+    .aqua-modal-keys {
+        gap: 9px;
+    }
+
     .unit-preview-body {
         grid-template-columns: 35% 65%;
     }
